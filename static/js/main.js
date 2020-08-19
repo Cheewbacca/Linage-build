@@ -192,3 +192,14 @@ getLogin.addEventListener('click', function(e) {
     mainBarForm[1].style.display = 'block';
     mainBarForm[0].style.display = 'none';
 });
+
+const signUpSubmitBtn = document.getElementById('confirm');
+
+signUpSubmitBtn.parentElement.addEventListener( "submit", function(e){
+    e.preventDefault();
+    if (document.getElementById('pass').value !== document.getElementById('repeat_pass').value){
+        alert('Passwords are not same');
+    }else {
+        this.submit();
+    }
+});
