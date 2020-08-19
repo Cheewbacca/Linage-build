@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="static\css\slick.css">
   </head>
   <body>
-    <header> <a class="header-logo dark_blue-background" href="#">
+    <header> <a class="header-logo dark_blue-background" href="/">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20%" height="80%">
           <image x="0px" y="0px" width="100%" height="100%" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAMAAAAlvKiEAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABSlBMVEU21/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821/821//////mADv5AAAAbHRSTlMAMQo9mga/nWB8JPSLQS8JBc/qgRGp85Qwoa6CkgSxCIiwIHXCAVSrHjf7+DYS5NTbDWb3JyI8wFFdTWcs/nQX9RPtbFw+4SMYidIhZcnHe+7fW2N3jqDxM6/p2t7n8v1+MoMuAwsQGygMVk6+GU+YAAAAAWJLR0RtuwYArQAAAAd0SU1FB+QIEBYUDWncm0AAAAEESURBVCjPbdHbNwJRFAbww5gmFc1Mo8hlZAyh5BIpEiqXYlxzSe5yyff/Pzt6IGfPfthr7d/ae31rncO6uhktqUd2UY/igl70UvT54Ql4+/qDnahq4KWHjH+rA0A4MijcDwHRYUlAhV+PjAoYAcZMMX4ciE2IaAGTtohTwHRcxJlZzCVETM4jRYJYFAuLBJewnCa44scqQTuDNfp6IWQp5rBOcSO/SbGwZVHc3im6oF4iZsT1MkGftbv3N6m5/R87CFd+qXp45BisenwCnJbOsufFi9qlc4X8NWM3AQd1R9Mqt427+wf+h498/6n8rLy8yqpsms23949aqtnO/uwMbX3x9g356ywonQKeqQAAAABJRU5ErkJggg=="></image>
         </svg></a>
@@ -15,7 +15,7 @@
       <div class="menu">
         <nav> 
           <ul> 
-            <li> <a class="header-fonts active" href="#">Main</a></li>
+            <li> <a class="header-fonts active" href="/">Main</a></li>
             <li> <a class="header-fonts" href="#">Worlds</a></li>
             <li> <a class="header-fonts" href="#">Buy Coins</a></li>
             <li> <a class="header-fonts" href="#">Statistic</a></li>
@@ -24,16 +24,16 @@
         </nav>
         <div class="actions-bar">
           <ul> 
-            <li class="dark_blue-background"> <a class="header-fonts" href="#" id="signUp">Sign Up</a></li>
-            <li class="dark_blue-background"> <a class="active header-fonts" href="#" id="login">Login</a></li>
+            <li class="dark_blue-background"> <a class="signUp header-fonts" href="#">Sign Up</a></li>
+            <li class="dark_blue-background"> <a class="signUp active header-fonts" href="#">Login</a></li>
             <li> <a class="header-fonts-big" href="#" id="download">Download   </a></li>
           </ul>
         </div>
       </div>
     </header>
-    <div class="signup-wrapper">
+    <div class="signup-wrapper" id="signUp">
       <div class="signup-content">
-        <div class="cross"></div>
+        <div class="cross" id="closeLogin"></div>
         <div class="top-bar"><a class="header-fonts active" href="#">Sign Up</a><a class="header-fonts" href="#">Login</a></div>
         <div class="main-bar"><a class="social-in" href="#">
             <div class="logo">
@@ -44,13 +44,13 @@
             <p class="header-fonts">Sign Up with <span> Facebook </span></p></a><span class="splitter h4-font">or</span>
           <form action="">
             <label for="user"></label>
-            <input class="header-fonts" type="text" placeholder="Username" id="user">
+            <input class="header-fonts" type="text" placeholder="Username" required id="user">
             <label for="pass"></label>
-            <input class="header-fonts" type="text" placeholder="Password" id="pass">
+            <input class="header-fonts" type="password" placeholder="Password" required id="pass">
             <label for="repeat_pass"></label>
-            <input class="header-fonts" type="text" placeholder="Confirm password" id="repeat_pass">
+            <input class="header-fonts" type="password" placeholder="Confirm password" required id="repeat_pass">
             <label for="email"></label>
-            <input class="header-fonts" type="text" placeholder="E-mail" id="email">
+            <input class="header-fonts" type="e-mail" placeholder="E-mail" required id="email">
             <button class="header-fonts white" type="submit" value="Confirm">Confirm</button>
           </form>
           <p class="mini-fonts">Confirming the register you agree with our </p>
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="main-body">
-        <div class="download-content">
+        <div class="download-content" id="downloadContent">
           <div class="top-bar"><span class="green-font">Download</span>
             <ul> 
               <li> <a class="header-fonts" href="#">World 1</a></li>
@@ -130,14 +130,24 @@
             </div>
           </div>
         </div>
-        <div class="slider">
+        <div class="slider" id="slider">
           <div class="buttons">
-            <div class="button active-btn"></div>
-            <div class="button"></div>
-            <div class="button"></div>
+            <div class="button active-slide bt-1"></div>
+            <div class="button bt-2"></div>
+            <div class="button bt-3"></div>
           </div>
-          <div class="slide"> 
+          <div class="slide bt-1">
             <div class="text-box"><span class="header-fonts-big">Weeknd EVENT!</span>
+              <h2 class="h2-font"><span> EXP X2 </span> in all  Worlds! </h2>
+            </div><img src="static/img/slider-item.png" alt="">
+          </div>
+          <div class="slide bt-2"> 
+            <div class="text-box"><span class="header-fonts-big">Weeknd EVENT 2 !</span>
+              <h2 class="h2-font"><span> EXP X2 </span> in all  Worlds! </h2>
+            </div><img src="static/img/slider-item.png" alt="">
+          </div>
+          <div class="slide bt-3"> 
+            <div class="text-box"><span class="header-fonts-big">Weeknd EVENT 3 !</span>
               <h2 class="h2-font"><span> EXP X2 </span> in all  Worlds! </h2>
             </div><img src="static/img/slider-item.png" alt="">
           </div>
@@ -162,8 +172,7 @@
               <h3 class="header-fonts-big white">Ranking</h3>
               <ul class="worlds-list">
                 <li> <a class="mini-fonts" href="#">World 1</a></li>
-                <li> <a class="mini-fonts" href="#">World 1</a></li>
-                <li> <a class="mini-fonts" href="#">World 1</a></li>
+                <li> <a class="mini-fonts" href="#">World 2</a></li>
               </ul>
             </div>
             <ul class="ranking-bar">
@@ -228,7 +237,6 @@
         </div>
       </div>
     </footer>
-    <script src="static//js//libs.min.js"></script>
     <script src="static//js//main.js"></script>
   </body>
 </html>
