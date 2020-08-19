@@ -51,26 +51,6 @@ if( window.innerWidth > 500 ){
             dots: true
         });
     });
-
-    const burger = document.getElementById('burger');
-    const navMenu = document.getElementById('menu');
-
-    let isMenuActive = false;
-
-    burger.addEventListener('click', function() {
-        if(!isMenuActive) {
-            navMenu.classList.add('showMenu');
-            this.classList.remove('closed');
-            this.classList.add('opened');
-            document.body.classList.add('disableScroll');
-        }else{
-            document.body.classList.remove('disableScroll');
-            navMenu.classList.remove('showMenu');
-            this.classList.add('closed');
-            this.classList.remove('opened');
-        }
-        isMenuActive = !isMenuActive;
-    });
 }
 
 const loginBtn = document.getElementsByClassName('signUp');
@@ -247,3 +227,25 @@ signUpSubmitBtn.parentElement.addEventListener( "submit", function(e){
         this.submit();
     }
 });
+
+if (window.innerWidth > 768){
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('menu');
+
+    let isMenuActive = false;
+
+    burger.addEventListener('click', function() {
+        if(!isMenuActive) {
+            navMenu.classList.add('showMenu');
+            this.classList.remove('closed');
+            this.classList.add('opened');
+            document.body.classList.add('disableScroll');
+        }else{
+            document.body.classList.remove('disableScroll');
+            navMenu.classList.remove('showMenu');
+            this.classList.add('closed');
+            this.classList.remove('opened');
+        }
+        isMenuActive = !isMenuActive;
+    });
+}
