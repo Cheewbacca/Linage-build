@@ -44,12 +44,32 @@ if( window.innerWidth > 500 ){
         $(".buttons").remove();
 
         $("#slider").slick({
-            slidesToShow: 1,
+            slidesToShow: 1, 
             slidesToScroll: 1,
             infinite: true, 
             arrows: false,
             dots: true
         });
+    });
+
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('menu');
+
+    let isMenuActive = false;
+
+    burger.addEventListener('click', function() {
+        if(!isMenuActive) {
+            navMenu.classList.add('showMenu');
+            this.classList.remove('closed');
+            this.classList.add('opened');
+            document.body.classList.add('disableScroll');
+        }else{
+            document.body.classList.remove('disableScroll');
+            navMenu.classList.remove('showMenu');
+            this.classList.add('closed');
+            this.classList.remove('opened');
+        }
+        isMenuActive = !isMenuActive;
     });
 }
 
