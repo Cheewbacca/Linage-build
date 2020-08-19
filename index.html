@@ -26,7 +26,7 @@
           <ul> 
             <li class="dark_blue-background"> <a class="signUp header-fonts" href="#">Sign Up</a></li>
             <li class="dark_blue-background"> <a class="signUp active header-fonts" href="#">Login</a></li>
-            <li> <a class="header-fonts-big" href="#" id="download">Download   </a></li>
+            <li> <a class="header-fonts-big" href="#downloadContent" id="download">Download   </a></li>
           </ul>
         </div>
       </div>
@@ -155,8 +155,7 @@
         <div class="control-panel">
           <div class="news">
             <div class="top-bar platform-pading">
-              <h3 class="header-fonts-big white">News</h3>
-              <div class="plus"></div>
+              <h3 class="header-fonts-big white">News</h3><a class="plus" href="#"></a>
             </div>
             <ul class="main-bar platform-pading">
               <li class="main-bar-item"><a href="#"> <img class="ico" src="static/img/avatar.png" alt=""><span class="date date-fonts">02 June 2020</span>
@@ -171,16 +170,36 @@
             <div class="top-bar platform-pading">
               <h3 class="header-fonts-big white">Ranking</h3>
               <ul class="worlds-list">
-                <li> <a class="mini-fonts" href="#">World 1</a></li>
-                <li> <a class="mini-fonts" href="#">World 2</a></li>
+                <li class="world world-1 visible" id="active-world"><a class="mini-fonts" href="#">World 1</a></li>
+                <li class="world world-2"><a class="mini-fonts" href="#">World 2</a></li>
               </ul>
             </div>
-            <ul class="ranking-bar">
+            <ul class="ranking-bar visible world-1"> 
               <li class="ranking-bar-item">
                 <h3 class="header-fonts">PVP</h3>
               </li>
               <li class="ranking-bar-item">
-                <div class="position header-fonts">1</div><span class="player header-fonts">L2Master</span><span class="score date-fonts">Score: <span> 26/0 </span></span>
+                <div class="position header-fonts">1</div><span class="player header-fonts">L2Master </span><span class="score date-fonts">Score: <span> 26/0 </span></span>
+              </li>
+              <li class="ranking-bar-item">
+                <div class="position header-fonts">2</div><span class="player header-fonts">MageOnCrack</span><span class="score date-fonts"> Score: <span> 26/0 </span></span>
+              </li>
+              <li class="ranking-bar-item">
+                <div class="position header-fonts">3</div><span class="player header-fonts">PVPKing</span><span class="score date-fonts"> Score: <span> 26/0 </span></span>
+              </li>
+              <li class="ranking-bar-item">
+                <div class="position header-fonts">4</div><span class="player header-fonts">TheWorstP</span><span class="score date-fonts"> Score: <span> 26/0 </span></span>
+              </li>
+              <li class="ranking-bar-item">
+                <div class="position header-fonts">5</div><span class="player header-fonts">GodnessisHere</span><span class="score date-fonts"> Score: <span> 26/0 </span></span>
+              </li>
+            </ul>
+            <ul class="ranking-bar world-2">
+              <li class="ranking-bar-item">
+                <h3 class="header-fonts">PVP</h3>
+              </li>
+              <li class="ranking-bar-item">
+                <div class="position header-fonts">1</div><span class="player header-fonts">L2Master (World 2)</span><span class="score date-fonts">Score: <span> 26/0 </span></span>
               </li>
               <li class="ranking-bar-item">
                 <div class="position header-fonts">2</div><span class="player header-fonts">MageOnCrack</span><span class="score date-fonts"> Score: <span> 26/0 </span></span>
@@ -199,16 +218,29 @@
           <div class="platform"><a class="platform-item" href="#"><img src="static/img/discord.png" alt=""></a><a class="platform-item" href="#"><img src="static/img/youtube.png" alt=""></a><a class="platform-item" href="#"><img src="static/img/facebook.png" alt=""></a></div>
         </div>
         <div class="worlds_info">
-          <div class="worlds_switcher"><a class="footer-fonts-big active_world" href="#">World 1</a><a class="footer-fonts-big" href="#">World 2</a></div>
-          <h3 class="h3-font">High Five <span>X5</span></h3>
-          <ul class="info"> 
-            <li class="info-item header-fonts white">XP: <span>X5 </span></li>
-            <li class="info-item header-fonts white">XP: <span>X5 </span></li>
-            <li class="info-item header-fonts white">XP: <span>X5 </span></li>
-            <li class="info-item header-fonts white">XP: <span>X5 </span></li>
-            <li class="info-item header-fonts white">XP: <span>X5 </span></li>
-            <li class="info-item header-fonts white">XP: <span>X5 </span></li>
-          </ul><img src="static/img/world-1-img.png" alt="">
+          <div class="worlds_switcher"><a class="footer-fonts-big active_world" href="#" id="wrld1">World 1</a><a class="footer-fonts-big" href="#" id="wrld2">World 2</a></div>
+          <div class="world-info visible">
+            <h3 class="h3-font">High Five <span>X5</span></h3>
+            <ul class="info"> 
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+            </ul><img src="static/img/world-1-img.png" alt="">
+          </div>
+          <div class="world-info world-info-2">
+            <h3 class="h3-font">High Five <span>X5</span></h3>
+            <ul class="info"> 
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+              <li class="info-item header-fonts white">XP: <span>X5 </span></li>
+            </ul><img src="static/img/world-2-img.png" alt="">
+          </div>
         </div>
       </div>
     </section>

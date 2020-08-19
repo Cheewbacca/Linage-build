@@ -25,11 +25,12 @@ let isContentVisible = false;
 // close/show popup for download
 
 download.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.stopPropagation();
     isContentVisible = !isContentVisible;
     if (isContentVisible) { 
         downloadContent.style.display = 'block';
     }else {
+        e.preventDefault();
         downloadContent.style.display = 'none';
     }
 });
@@ -51,6 +52,15 @@ function hide(node){
 function show(className){
     [...document.getElementsByClassName(className)].forEach( slide => slide.style.display = 'flex' );
 }
+
+function addVisible(node, className){
+    [...document.getElementsByClassName(node)].forEach( btn => { btn.classList.add(className); });
+}
+
+function removeVisible(node, className){
+    [...document.getElementsByClassName(node)].forEach( btn => { btn.classList.remove(className); });
+}
+
 
 let slidesNames = ['bt-1', 'bt-2', 'bt-3'];
 
@@ -75,4 +85,44 @@ let slidesNames = ['bt-1', 'bt-2', 'bt-3'];
             }
         });
     });
+});
+
+const rankingWorlds = document.getElementsByClassName('world');
+
+const activeWorld = document.getElementById('active-world');
+
+let worldLists = ['world-1' , 'world-2'];
+
+[...rankingWorlds].forEach( world => {
+    world.addEventListener("click", function(e) {
+        e.preventDefault();
+        let classes = this.classList.value;
+        worldLists.forEach( list => {
+            if (classes.indexOf(list) > -1 ){
+                addVisible( list ,'visible');
+            } else {
+                removeVisible( list ,'visible');
+            }
+        });
+    });
+});
+
+const wrld1 = document.getElementById('wrld1');
+const wrld2 = document.getElementById('wrld2');
+const worldInfo = [...document.getElementsByClassName('world-info')];
+
+wrld1.addEventListener('click', function(e) {
+    e.preventDefault();
+    wrld2.classList.remove('active_world');
+    this.classList.add('active_world');
+    worldInfo[1].classList.remove('visible');  
+    worldInfo[0].classList.add('visible');
+});
+
+wrld2.addEventListener('click', function(e) {
+    e.preventDefault();
+    wrld1.classList.remove('active_world');
+    this.classList.add('active_world');
+    worldInfo[0].classList.remove('visible');  
+    worldInfo[1].classList.add('visible');
 });
