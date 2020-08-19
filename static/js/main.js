@@ -10,10 +10,31 @@ const signUp = document.getElementById('signUp');
     });
 });
 
+[...loginBtn][0].addEventListener("click", function(e){
+    e.preventDefault();
+    signUp.style.display = 'flex';
+    getLogin.classList.remove('active');
+    getLogin.classList.remove('active_entry');
+    getSignUp.classList.add('active');
+    getSignUp.classList.add('active_entry');
+    mainBarForm[0].style.display = 'block';
+    mainBarForm[1].style.display = 'none';
+});
+
+[...loginBtn][1].addEventListener("click", function(e){
+    e.preventDefault();
+    signUp.style.display = 'flex';
+    getSignUp.classList.remove('active');
+    getSignUp.classList.remove('active_entry');
+    getLogin.classList.add('active');
+    getLogin.classList.add('active_entry');
+    mainBarForm[1].style.display = 'block';
+    mainBarForm[0].style.display = 'none';
+});
+
 const closeLogin = document.getElementById('closeLogin');
 
 // close login popup
-
 closeLogin.addEventListener("click", () => {
     signUp.style.display = 'none';
 });
@@ -25,12 +46,11 @@ let isContentVisible = false;
 // close/show popup for download
 
 download.addEventListener("click", (e) => {
-    e.stopPropagation();
+    e.preventDefault();
     isContentVisible = !isContentVisible;
     if (isContentVisible) { 
         downloadContent.style.display = 'block';
     }else {
-        e.preventDefault();
         downloadContent.style.display = 'none';
     }
 });
@@ -125,4 +145,50 @@ wrld2.addEventListener('click', function(e) {
     this.classList.add('active_world');
     worldInfo[0].classList.remove('visible');  
     worldInfo[1].classList.add('visible');
+});
+
+const downloadW1 = document.getElementById('downloadW1');
+const downloadW2 = document.getElementById('downloadW2');
+
+const requirements = [...document.getElementsByClassName('download-main')];
+
+downloadW1.addEventListener('click', function(e) {
+    e.preventDefault();
+    downloadW2.classList.remove('active-download-world');
+    this.classList.add('active-download-world');
+    requirements[0].style.display = 'block';
+    requirements[1].style.display = 'none';
+});
+
+downloadW2.addEventListener('click', function(e) {
+    e.preventDefault();
+    downloadW1.classList.remove('active-download-world');
+    this.classList.add('active-download-world');
+    requirements[1].style.display = 'block';
+    requirements[0].style.display = 'none';
+});
+
+const getSignUp = document.getElementById('getSignUp');
+const getLogin = document.getElementById('getLogin');
+
+const mainBarForm =[...document.getElementsByClassName('form')];
+
+getSignUp.addEventListener('click', function(e) {
+    e.preventDefault();
+    getLogin.classList.remove('active');
+    getLogin.classList.remove('active_entry');
+    this.classList.add('active');
+    this.classList.add('active_entry');
+    mainBarForm[0].style.display = 'block';
+    mainBarForm[1].style.display = 'none';
+});
+
+getLogin.addEventListener('click', function(e) {
+    e.preventDefault();
+    getSignUp.classList.remove('active');
+    getSignUp.classList.remove('active_entry');
+    this.classList.add('active');
+    this.classList.add('active_entry');
+    mainBarForm[1].style.display = 'block';
+    mainBarForm[0].style.display = 'none';
 });

@@ -34,8 +34,8 @@
     <div class="signup-wrapper" id="signUp">
       <div class="signup-content">
         <div class="cross" id="closeLogin"></div>
-        <div class="top-bar"><a class="header-fonts active" href="#">Sign Up</a><a class="header-fonts" href="#">Login</a></div>
-        <div class="main-bar"><a class="social-in" href="#">
+        <div class="top-bar"><a class="header-fonts active active_entry" href="#" id="getSignUp">Sign Up</a><a class="header-fonts" href="#" id="getLogin">Login</a></div>
+        <div class="main-bar form"><a class="social-in" href="#">
             <div class="logo">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50%" height="50%">
                 <image x="0px" y="0px" width="100%" height="100%" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAMAAABFjsb+AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAt1BMVEXr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fnr8fn///9R8Zl8AAAAO3RSTlMAGa/o6xqxsO3m7PeXVktM0vjlpREXwmpj6fD9pmajbTcWI7syP9Dbx1F6y/tsomifZaDuZKSt4eRaj2Ca0R8AAAABYktHRDynamHPAAAAB3RJTUUH5AgSFSsSFEXKWwAAAJhJREFUGNNl0NcWgjAQBNBJQOzYFXvs2DtY/v+/jDHABuclc+5DNhswbtk0Fs/AeaeTRe7P8ijEvVgqu5Xq1+yIai5k5FX1xBpSmq22YR3A6/b6hnnAQBViQ2Bk2lhMgKkQM2Jz/ELnLrQtia38NbDxtztjxh44pOcegZO2eN8zcNF/cI3slphD3nxXhYMF4UPlCbzkEQbsAwmQOKxVboSaAAAAAElFTkSuQmCC"></image>
@@ -56,6 +56,15 @@
           <p class="mini-fonts">Confirming the register you agree with our </p>
           <p class="mini-fonts"><a href="#"> Terms of Use </a> and <a href="#"> Privacy Poliy </a></p>
         </div>
+        <div class="main-bar form">
+          <form action="">
+            <label for="user"></label>
+            <input class="header-fonts" type="text" placeholder="Username" required id="user">
+            <label for="pass"></label>
+            <input class="header-fonts" type="password" placeholder="Password" required id="pass">
+            <button class="header-fonts white" type="submit" value="Confirm">Login</button>
+          </form>
+        </div>
       </div>
     </div>
     <section class="main">
@@ -69,8 +78,8 @@
         <div class="download-content" id="downloadContent">
           <div class="top-bar"><span class="green-font">Download</span>
             <ul> 
-              <li> <a class="header-fonts" href="#">World 1</a></li>
-              <li> <a class="header-fonts" href="#">World 2</a></li>
+              <li class="active-download-world" id="downloadW1"><a class="header-fonts" href="#">World 1</a></li>
+              <li id="downloadW2"> <a class="header-fonts" href="#">World 2</a></li>
             </ul>
           </div>
           <div class="download-main">
@@ -95,36 +104,90 @@
                 </tr>
                 <tr> 
                   <td class="header-fonts">CPU  </td>
-                  <td class="header-fonts">CPU </td>
-                  <td class="header-fonts">CPU </td>
+                  <td class="header-fonts">Intel® Pentium® 4 3.0 GHz </td>
+                  <td class="header-fonts">Intel® Core™2 Duo 6300  </td>
+                </tr>
+                <tr> 
+                  <td class="header-fonts">Memory  </td>
+                  <td class="header-fonts">2 GB or more RAM    </td>
+                  <td class="header-fonts">4 GB or more RAM </td>
+                </tr>
+                <tr> 
+                  <td class="header-fonts">Video card  </td>
+                  <td class="header-fonts">NVIDIA® GeForce® 6600 GT </td>
+                  <td class="header-fonts">NVIDIA® GeForce® 7600 GT </td>
+                </tr>
+                <tr> 
+                  <td class="header-fonts">Connection  </td>
+                  <td class="header-fonts">56k Internet connection </td>
+                  <td class="header-fonts">Broadband Internet Connection </td>
+                </tr>
+                <tr> 
+                  <td class="header-fonts">Hard Disc  </td>
+                  <td class="header-fonts table-center" colspan="2">30 GB or higher free space  </td>
+                </tr>
+                <tr> 
+                  <td class="header-fonts">Direct X  </td>
+                  <td class="header-fonts table-center" colspan="2">Direct X 9.0c or above </td>
+                </tr>
+                <tr> 
+                  <td class="header-fonts">Operating System  </td>
+                  <td class="header-fonts table-center" colspan="2">Windows 7 32bit / Windows 8 32bit / Windows 10 32bit</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="download-main">
+            <div class="options">
+              <p class="dotted header-fonts-big">Choose the best download option (File size: <span> 7.5GB </span>) 2</p>
+              <ul class="options-list m50-t-b">
+                <li><a class="green-font red p30-t-b" href="#">MEGA</a></li>
+                <li><a class="green-font p30-t-b" href="#">Torrent</a></li>
+                <li><a class="green-font blue p30-t-b" href="#">Mediafire</a></li>
+              </ul>
+            </div>
+            <div class="manual">
+              <p class="dotted header-fonts-big">Manual Update (File size:<span> 109MB </span>)</p><a class="p30-t-b green-font m50-t-b" href="#">Download</a>
+            </div>
+            <div class="requirements">
+              <p class="dotted header-fonts-big">System Requirements</p>
+              <table class="requirements-list m50-t-b" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th class="h4-font">Components</th>
+                  <th class="h4-font">Minimum</th>
+                  <th class="h4-font">Recomended</th>
                 </tr>
                 <tr> 
                   <td class="header-fonts">CPU  </td>
-                  <td class="header-fonts">CPU </td>
-                  <td class="header-fonts">CPU </td>
+                  <td class="header-fonts">Intel® Pentium® 4 3.0 GHz </td>
+                  <td class="header-fonts">Intel® Core™2 Duo 6300  </td>
                 </tr>
                 <tr> 
-                  <td class="header-fonts">CPU  </td>
-                  <td class="header-fonts">CPU </td>
-                  <td class="header-fonts">CPU </td>
+                  <td class="header-fonts">Memory  </td>
+                  <td class="header-fonts">2 GB or more RAM    </td>
+                  <td class="header-fonts">4 GB or more RAM </td>
                 </tr>
                 <tr> 
-                  <td class="header-fonts">CPU  </td>
-                  <td class="header-fonts">CPU </td>
-                  <td class="header-fonts">CPU </td>
+                  <td class="header-fonts">Video card  </td>
+                  <td class="header-fonts">NVIDIA® GeForce® 6600 GT </td>
+                  <td class="header-fonts">NVIDIA® GeForce® 7600 GT </td>
                 </tr>
                 <tr> 
-                  <td class="header-fonts">CPU  </td>
-                  <td class="header-fonts table-center" colspan="2">CPU </td>
+                  <td class="header-fonts">Connection  </td>
+                  <td class="header-fonts">56k Internet connection </td>
+                  <td class="header-fonts">Broadband Internet Connection </td>
                 </tr>
                 <tr> 
-                  <td class="header-fonts">CPU  </td>
-                  <td class="header-fonts table-center" colspan="2">CPU </td>
+                  <td class="header-fonts">Hard Disc  </td>
+                  <td class="header-fonts table-center" colspan="2">30 GB or higher free space  </td>
                 </tr>
                 <tr> 
-                  <td class="header-fonts">CPU  </td>
-                  <td class="header-fonts">CPU </td>
-                  <td class="header-fonts">CPU </td>
+                  <td class="header-fonts">Direct X  </td>
+                  <td class="header-fonts table-center" colspan="2">Direct X 9.0c or above </td>
+                </tr>
+                <tr> 
+                  <td class="header-fonts">Operating System  </td>
+                  <td class="header-fonts table-center" colspan="2">Windows 7 32bit / Windows 8 32bit / Windows 10 32bit</td>
                 </tr>
               </table>
             </div>
@@ -258,7 +321,7 @@
               </svg>
             </div><a class="footer-fonts" href="#">ENGLISH</a>
           </li>
-          <li> <a class="footer-fonts" href="#">ENGLISH</a></li>
+          <li> <a class="footer-fonts" href="#">RUSSIAN</a></li>
         </ul>
       </div>
       <div class="footer-bottom">
