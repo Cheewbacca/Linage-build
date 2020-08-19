@@ -198,8 +198,6 @@ downloadW2.addEventListener('click', function(e) {
 
 // script for open SignUp and Login PopUps
 
-
-
 const getSignUp = document.getElementById('getSignUp');
 const getLogin = document.getElementById('getLogin');
 
@@ -249,3 +247,9 @@ if (window.innerWidth < 768){
         isMenuActive = !isMenuActive;
     });
 }
+
+// const signupWrapper = [...document.getElementsByClassName('signup-wrapper')][0];
+
+// signupWrapper.addEventListener('click', function(){
+//     this.style.display = 'none';
+// });
