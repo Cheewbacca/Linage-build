@@ -100,8 +100,7 @@ download.addEventListener("click", (e) => {
         downloadContent.style.display = 'block';
         burger.style.display = 'none';
     }else {
-        downloadContent.style.display = 'none';
-        burger.style.display = 'block';
+        downloadContent.style.display = 'none'; 
     }
 });
 
@@ -252,6 +251,6 @@ if (window.innerWidth < 768){
     const closeDonwload = document.getElementById('closeDonwload');
     closeDonwload.addEventListener('click', ()=>{
         downloadContent.style.display = 'none';
-        burger.style.display = 'none';
+        burger.style.display = 'block';
     });
 }
