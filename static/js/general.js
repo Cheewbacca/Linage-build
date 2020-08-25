@@ -62,7 +62,7 @@ signUpSubmitBtn.parentElement.addEventListener( "submit", function(e){
     }
 });
 
-if (window.innerWidth < 768){
+if (window.innerWidth < 1200){
     const burger = document.getElementById('burger');
     const navMenu = document.getElementById('menu');
 
